@@ -18,15 +18,17 @@ const Home: NextPage = () => {
         <script src="https://unpkg.com/react-yandex-maps/dist/production/react-yandex-maps.umd.js"></script>
       </Head>
       
-      <Header/>
+      <body>  
+        <Header/>
 
-      <main>
-        <Welcome/>
-        <Sightseens/>
-        <Tours/>
-        <Contacts/>
-        <Footer/>
-      </main>
+        <main>
+          <Welcome/>
+          <Sightseens/>
+          <Tours/>
+          <Contacts/>
+          <Footer/>
+        </main>
+      </body>
 
     </div>
   )

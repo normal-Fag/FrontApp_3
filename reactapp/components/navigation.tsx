@@ -2,8 +2,7 @@ import { useState } from "react"
 import { start } from "repl";
 import { EventEmitter } from "stream";
 
-export function Navigation(props: {isItFooterNav: boolean}) {
-
+export function Navigation(props: {isItFooterNav: boolean, updateMenuVisible: Function}) {
     const [navigation, setNavigation] = useState([
         {
             href: 'welcome-section',
@@ -22,19 +21,12 @@ export function Navigation(props: {isItFooterNav: boolean}) {
             title: 'Контакты'
         },
     ])
-
+    // функция скролла до определенного блока (доработать)
     const scrollToBlock = (e: MouseEvent) => {
         e.preventDefault();
-        // const yOffset = -72;
-        let block = document.querySelector('.' + e.currentTarget.getAttribute('href'));
-        // const y = block?.getBoundingClientRect().top + yOffset + window.pageYOffset;
-
-        // window.scrollTo({
-        //     top: y,
-        //     behavior: 'smooth'
-        // })
-
+        let block = document.querySelector('.' + e.currentTarget.getAttribute('href')); // исправить
         block && block.scrollIntoView({behavior: "smooth", block: "start"});
+        props.updateMenuVisible(false);
     }
 
     return(
