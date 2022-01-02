@@ -1,15 +1,13 @@
 import React from "react"
 
-export function Sightseen(props) {
-    let sightseenClassName; 
-    if(props.align === 'left'){
-        sightseenClassName = 'sightseens__item left-align';
-    }
-    else {
-        sightseenClassName = 'sightseens__item';
-    }
+export interface SightseenItem {
+    align: string,
+    title: string
+}
+
+export function Sightseen(props: SightseenItem) {
     return(
-        <div className={sightseenClassName}>
+        <div className={props.align === 'left' ? 'sightseens__item left-align' : 'sightseens__item'}>
             <div className="sightseens__img">
             <img src="img/sightseens/b.jpg" alt="photo"/>
         </div>

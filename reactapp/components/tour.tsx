@@ -1,22 +1,20 @@
 interface TourItem  {
     title: string
-    img: string
     price: number
     description: string
+    isVisible: boolean
 }
 
-export function Tour(props) {
-
-    let isTourVisible = props.isVisible;
+export function Tour(props: TourItem) {
 
     return (
-        <div className={`tours__item${ isTourVisible ? '' : ' tours__item--hidden'}`}>
+        <div className={`tours__item${ props.isVisible ? '' : ' tours__item--hidden'}`}>
             <div className="tours__gradient">
                 <div className="tours__content">
-                    <h3 className="tours__name">Название</h3>
-                    <p className="tours__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pretium orci at rutrum pellentesque.</p>
+                    <h3 className="tours__name">{props.title}</h3>
+                    <p className="tours__description">{props.description}</p>
                     <div className="tours__buy">
-                        <p className="tours__price">От <b>10 000</b> р.</p>
+                        <p className="tours__price">От <b>{props.price}</b> р.</p>
                         <button className="tours__btn">Купить</button>
                     </div>
                 </div>

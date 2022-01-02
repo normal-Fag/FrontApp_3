@@ -1,4 +1,5 @@
 import { Contact } from "../components/contact";
+import { Yndexmap } from "../components/YandexMap";
 
 export function Contacts() {
     return (
@@ -18,7 +19,7 @@ export function Contacts() {
                     <a href="mailto:kancler@vskhakasia.ru">kancler@vskhakasia.ru</a>
                 </li>
             </ul>
-            <div className="contacts__map" id="map"></div>
+            <Yndexmap/>
         </div>
     </section>
     )
