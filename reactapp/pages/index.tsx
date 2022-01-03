@@ -17,18 +17,16 @@ const Home: NextPage = () => {
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto:wght@100;300;400;500;700&display=swap&subset=cyrillic-ext" rel="stylesheet"></link>
         <script src="https://unpkg.com/react-yandex-maps/dist/production/react-yandex-maps.umd.js"></script>
       </Head>
-      
-      <body>  
-        <Header/>
+    
+      <Header/>
 
-        <main>
-          <Welcome/>
-          <Sightseens/>
-          <Tours/>
-          <Contacts/>
-          <Footer/>
-        </main>
-      </body>
+      <main>
+        <Welcome/>
+        <Sightseens/>
+        <Tours/>
+        <Contacts/>
+        <Footer/>
+      </main>
 
     </div>
   )

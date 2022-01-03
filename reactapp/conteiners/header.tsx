@@ -14,6 +14,7 @@ export function Header() {
             setHeaderScrolling(false);
         }
     }
+
     // Отслеживание скролла 
     useEffect(() => {
         window.addEventListener('scroll', handlerPageScroll);
@@ -28,19 +29,22 @@ export function Header() {
     
     return(
         <header className={`header${ isMenuVisible ? ' active' : ''}${ isHeaderScrolling ? ' scrolling': ''}`}>
-        <div className="header__container container">
-            <a href="#" className="header__logo"></a>
-            <button 
-            className="header__burger header__burger-active" 
-            type="button" 
-            onClick={() => {
-                setMenuVisible(!isMenuVisible)
-                document.querySelector('body')?.classList.toggle('lock')
-            }}>
-                <span></span>
-            </button> 
-            <Navigation isItFooterNav={false} updateMenuVisible={removeMenuVisible}/>
-        </div>
-    </header>
+            <div className="header__container container">
+                <a href="#" className="header__logo"></a>
+                <button 
+                    className="header__burger header__burger-active" 
+                    type="button" 
+                    onClick={
+                        () => {
+                            setMenuVisible(!isMenuVisible)
+                            document.querySelector('body')?.classList.toggle('lock')
+                        }
+                    }
+                >
+                    <span></span>
+                </button> 
+                <Navigation isItFooterNav={false} updateMenuVisible={removeMenuVisible}/>
+            </div>
+        </header>
     )
 }
