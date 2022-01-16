@@ -1,7 +1,12 @@
 import { useState } from "react"
 import { Link, animateScroll as scroll } from "react-scroll";
 
-export function Navigation(props: {isItFooterNav: boolean, updateMenuVisible?: Function}) {
+export interface NavigationItem {
+    isItFooterNav: boolean,
+    updateMenuVisible?: Function
+}
+
+export function Navigation(props: NavigationItem) {
     const [navigation, setNavigation] = useState([
         {
             href: 'welcome-section',

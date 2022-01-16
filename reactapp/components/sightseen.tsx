@@ -1,7 +1,7 @@
 import React from "react"
 
 export interface SightseenItem {
-    align: string,
+    align?: string,
     title: string
 }
 
